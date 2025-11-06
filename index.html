@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Gaming Zone — Unlock the Ultimate Experience!</title>
+  <meta name="description" content="Epic gaming content — click to enter. Fast, safe, and free access. Level up your play!" />
+  <meta property="og:title" content="Gaming Zone — Unlock the Ultimate Experience!" />
+  <meta property="og:description" content="Epic gaming content — click to enter. Fast, safe, and free access. Level up your play!" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{--bg:#0f1724;--card:#ffffff;--muted:#6b7280;--accent:#22c55e;--danger:#e11d48}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,#000000 0%,#051622 100%);color:var(--card);display:flex;align-items:center;justify-content:center;padding:24px}
+    .container{max-width:720px;width:100%;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border-radius:12px;padding:28px;box-shadow:0 8px 30px rgba(2,6,23,0.7)}
+    .row{display:flex;gap:24px;align-items:center}
+    .left{flex:1}
+    h1{margin:0 0 8px;font-size:28px;line-height:1.05;letter-spacing:-0.5px;}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+    ul{margin:12px 0 18px;padding-left:18px;color:var(--muted);list-style:none;}
+    ul li{margin-bottom:10px;display:flex;align-items:center;font-size:16px;}
+    ul li::before{content:'🔥';margin-right:8px;}
+    .btn{display:inline-block;padding:16px 22px;border-radius:10px;background:var(--accent);color:#052024;text-decoration:none;font-weight:700;letter-spacing:0.03em;font-size:18px;cursor:pointer;transition:background 0.2s, transform 0.2s;}
+    .btn:hover, .btn:focus{background:#16a34a;transform:scale(1.07);}
+    .small{font-size:13px;color:var(--muted);margin-top:12px}
+    .badge{display:inline-block;background:rgba(255,255,255,0.08);padding:7px 13px;border-radius:999px;font-size:15px;color:var(--danger);margin-bottom:10px;letter-spacing:0.08em;font-weight:600;}
+    .image{width:170px;height:170px;border-radius:12px;background:linear-gradient(90deg,#22c55e,#86efac);display:flex;align-items:center;justify-content:center;color:#052024;font-size:2.7rem;font-weight:700;box-shadow:0 0 30px 0 #22c55e50;animation:bounce 2s infinite;}
+    @keyframes bounce{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-15px);}
+    }
+    .countdown{font-size:18px;color:var(--accent);margin:15px 0 5px;font-weight:600;letter-spacing:0.06em;}
+    .share-btns{display:flex;gap:14px;margin-top:15px;}
+    .share-btns a{display:inline-block;background:rgba(34,197,94,0.14);border-radius:8px;padding:8px 12px;color:var(--muted);font-size:15px;text-decoration:none;}
+    .share-btns a:hover{color:var(--accent);background:rgba(34,197,94,0.3);}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:640px){.row{flex-direction:column}.image{width:100%;height:160px}}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <div class="row">
+      <div class="left">
+        <span class="badge">🔥 Hot Gaming • Free & Fun • Limited Access</span>
+        <h1>Level Up! Unlock the Secret Gaming Zone 🚀</h1>
+        <div class="countdown" id="countdown"></div>
+        <p class="lead">Are you ready for the ultimate challenge? Enter now to discover pro clips, hidden features, thrilling offers — and compete with other gamers for exclusive rewards!</p>
+        <ul>
+          <li>Pro gamer tips & exclusive hacks</li>
+          <li>Discover new + secret games</li>
+          <li>Mobile-optimized content & bonuses</li>
+        </ul>
+        <a id="cta" class="btn" href="#" rel="noopener noreferrer">Unlock Now & Play 🎮</a>
+        <div class="share-btns">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://otieu.com/4/10148333" target="_blank" aria-label="Share on Facebook">Share on Facebook</a>
+          <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20secret%20Gaming%20Zone!%20https://otieu.com/4/10148333" target="_blank" aria-label="Share on Twitter">Share on Twitter</a>
+        </div>
+        <div class="small">By tapping the button you agree to be redirected to our partner page. No spam, just fun.</div>
+        <footer>Need help? Message the page admin for details.</footer>
+      </div>
+      <div class="image" aria-hidden="true">🎮 Play</div>
+    </div>
+  </main>
+
+  <script>
+    // Countdown effect for mystery engagement
+    let seconds = 10;
+    const countdown = document.getElementById('countdown');
+    function tick(){
+      countdown.textContent = `Limited! Unlock in ${seconds} seconds...`;
+      if(seconds > 0){
+        seconds--;
+        setTimeout(tick,1000);
+      }else{
+        countdown.textContent = "Now open! Tap below to enter 🎉";
+      }
+    }
+    tick();
+
+    const SMARTLINK_URL = 'https://otieu.com/4/10148333';
+
+    function addUTM(url){
+      try{
+        const u = new URL(url);
+        u.searchParams.set('utm_source','facebook');
+        u.searchParams.set('utm_medium','social');
+        u.searchParams.set('utm_campaign','monetag_gaming');
+        return u.toString();
+      }catch(e){return url}
+    }
+
+    const cta = document.getElementById('cta');
+    cta.addEventListener('click',function(e){
+      e.preventDefault();
+      cta.textContent = 'Loading...';
+      cta.style.opacity = '0.8';
+      setTimeout(function(){
+        const final = addUTM(SMARTLINK_URL);
+        window.open(final,'_blank','noopener');
+        cta.textContent = 'Play Now!';
+        cta.style.opacity = '1';
+      },600);
+    });
+
+    // Optionally auto redirect after countdown end
+    // setTimeout(function(){
+    //   window.location.href = addUTM(SMARTLINK_URL);
+    // }, 11000);
+
+  </script>
+</body>
+</html>
